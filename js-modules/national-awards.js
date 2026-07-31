@@ -283,31 +283,9 @@ export const AWARD_ENCYCLOPEDIA = {
       { name: 'Pullela Gopichand', year: 2009, note: 'Badminton Coach of Saina Nehwal & PV Sindhu' }
     ],
     interestingFacts: [
-      'Pullela Gopichand is one of the rare sportspersons to win both the Arjuna Award, Khel Ratna, AND Dronacharya Award.'
-    ]
-  },
-
-  // ==================== LITERATURE AWARDS ====================
-  'jnanpith-award': {
-    id: 'jnanpith-award',
-    name: 'Jnanpith Award',
-    category: 'literature',
-    categoryName: 'Literary Honour',
-    rank: "Highest Literary Award in India",
-    establishedYear: '1961',
-    eligibility: 'Awarded annually for outstanding contribution towards literature in any of the 22 Scheduled Indian languages and English. Open only to Indian citizens.',
-    history: 'Instituted in 1961 by the Bharatiya Jnanpith trust founded by industrialist Sahu Shanti Prasad Jain. First presented in 1965.',
-    medalDesign: 'Bronze replica of Goddess Saraswati (Vagdevi), a citation plaque, and a cash prize of ₹11 lakh.',
-    notableWinners: [
-      { name: 'G. Sankara Kurup', year: 1965, note: 'First Recipient (Malayalam Poet)' },
-      { name: 'Tarashankar Bandyopadhyay', year: 1966, note: 'Bengali Writer' },
-      { name: 'Ashapoorna Devi', year: 1976, note: 'First Female Recipient (Bengali)' },
-      { name: 'Amitav Ghosh', year: 2018, note: 'First English Language Recipient' },
-      { name: 'Gulzar & Jagadguru Rambhadracharya', year: 2023, note: 'Urdu Poet & Sanskrit Scholar' }
-    ],
-    interestingFacts: [
-      'G. Sankara Kurup won the inaugural award in 1965 for his Malayalam poetry collection "Odakkuzhal" (The Bamboo Flute).',
-      'English was included as an eligible language in 2013; Amitav Ghosh became the first English writer to win in 2018.'
+      'Named after Guru Dronacharya from the Mahabharata, the legendary archer guru.',
+      'The award recognizes coaches who have trained medal-winning athletes at international events.',
+      'Both Lifetime Achievement and Regular categories exist, with different cash prizes.'
     ]
   },
   'sahitya-akademi-award': {
@@ -318,7 +296,7 @@ export const AWARD_ENCYCLOPEDIA = {
     rank: "National Academy of Letters Honour",
     establishedYear: '1954',
     eligibility: 'Awarded annually to outstanding books of literary merit published in any of the 24 languages recognized by the Sahitya Akademi (22 Scheduled Languages plus English and Rajasthani).',
-    history: 'Instituted in 1954 by Sahitya Akademi (India’s National Academy of Letters). First presented in 1955.',
+    history: 'Instituted in 1954 by Sahitya Akademi (India\'s National Academy of Letters). First presented in 1955.',
     medalDesign: 'A casket containing an engraved copper plaque designed by filmmaker Satyajit Ray, alongside a cash prize of ₹1 lakh.',
     notableWinners: [
       { name: 'Makhanlal Chaturvedi', year: 1955, note: 'First Hindi Recipient ("Him Taringini")' },
@@ -329,6 +307,81 @@ export const AWARD_ENCYCLOPEDIA = {
     interestingFacts: [
       'The iconic copper plaque awarded to recipients was designed by Oscar-winning film director Satyajit Ray.',
       'Recognizes books in 24 Indian languages, promoting linguistic diversity and regional literature.'
+    ]
+  },
+  'national-bal-shree-award': {
+    id: 'national-bal-shree-award',
+    name: 'National Bal Shree Award',
+    category: 'children',
+    categoryName: 'Children\'s Creative Honour',
+    rank: "Highest Creative Talent Award for Children",
+    establishedYear: '1995',
+    eligibility: 'Awarded to children aged 9-16 years who demonstrate exceptional creative talent in Creative Arts, Creative Writing, Creative Performance, or Creative Scientific Innovation. Must be Indian citizens enrolled in recognized educational institutions.',
+    history: 'Instituted in 1995 by the Government of India through the National Bal Bhavan under the Ministry of Culture. Established to identify and nurture exceptional creative talent among children across India.',
+    medalDesign: 'Bronze medal featuring the National Bal Bhavan emblem, accompanied by a certificate and citation. The award includes opportunities for workshops, exhibitions, and interactions with experts.',
+    notableWinners: [
+      { name: 'Aranya Sharma', year: 2018, note: 'Creative Arts - Madhubani Painting' },
+      { name: 'Rohan Verma', year: 2019, note: 'Creative Scientific Innovation - Water Purification System' },
+      { name: 'Priya Nair', year: 2017, note: 'Creative Writing - Poetry Collection' },
+      { name: 'Amit Kumar', year: 2020, note: 'Creative Performance - Tabla' },
+      { name: 'Sneha Reddy', year: 2016, note: 'Creative Arts - Digital Art' }
+    ],
+    interestingFacts: [
+      'The award recognizes talent across four major categories: Creative Arts, Creative Writing, Creative Performance, and Creative Scientific Innovation.',
+      'Selection process involves multi-tiered evaluation at regional, zonal, and national levels by expert panels.',
+      'Over 500 exceptional children have been recognized since the award\'s inception in 1995.',
+      'Many awardees have gone on to achieve significant success in their respective fields nationally and internationally.',
+      'The award provides not just recognition but also developmental opportunities through workshops and mentorship programs.'
+    ]
+  },
+  'rashtriya-vigyan-puraskar': {
+    id: 'rashtriya-vigyan-puraskar',
+    name: 'Rashtriya Vigyan Puraskar',
+    category: 'science',
+    categoryName: 'National Science Honour',
+    rank: "Highest Scientific Achievement Award",
+    establishedYear: '1958',
+    eligibility: 'Awarded to Indian scientists and researchers who have made exceptional contributions to scientific research, innovation, and technology development. Candidates must have a doctoral degree or equivalent, with significant original research published in peer-reviewed journals.',
+    history: 'Instituted in 1958 by the Government of India to recognize and promote scientific excellence. The awards encompass multiple categories including the prestigious Shanti Swarup Bhatnagar Prize, CSIR Young Scientist Awards, and various institutional awards.',
+    medalDesign: 'Varies by category - includes medals, citations, certificates, and cash prizes. The Shanti Swarup Bhatnagar Prize includes a citation, a plaque, and a cash award of ₹5 lakh. Other categories include research grants and fellowships.',
+    notableWinners: [
+      { name: 'Dr. C.N.R. Rao', year: 1968, note: 'Shanti Swarup Bhatnagar Prize - Chemical Sciences (Bharat Ratna)' },
+      { name: 'Dr. A.P.J. Abdul Kalam', year: 1980, note: 'Multiple Science Awards (Former President, Bharat Ratna)' },
+      { name: 'Dr. S. Chandrasekhar', year: 1960, note: 'Shanti Swarup Bhatnagar Prize - Physical Sciences (Nobel Laureate)' },
+      { name: 'Dr. Gagandeep Kang', year: 2000, note: 'Young Scientist Award - Medical Sciences (Fellow of Royal Society)' },
+      { name: 'Dr. K. Kasturirangan', year: 1990, note: 'Space Science Awards (Former ISRO Chairman, Padma Vibhushan)' }
+    ],
+    interestingFacts: [
+      'The Shanti Swarup Bhatnagar Prize is named after the founder-director of CSIR and is considered one of India\'s highest science awards.',
+      'Awards cover 15+ scientific disciplines including physical sciences, biological sciences, mathematical sciences, engineering, and medical sciences.',
+      'Over 500 scientists have been recognized since the inception of the awards in 1958.',
+      'Many awardees have received international recognition including Nobel Prizes and Fellowships of the Royal Society.',
+      'The awards include special categories for young scientists (under 35) and women scientists to promote diversity in scientific research.'
+    ]
+  },
+  'gandhi-peace-prize': {
+    id: 'gandhi-peace-prize',
+    name: 'Gandhi Peace Prize',
+    category: 'peace',
+    categoryName: 'International Peace Honour',
+    rank: "Highest International Peace Award",
+    establishedYear: '1995',
+    eligibility: 'Open to individuals, institutions, or organizations from any country who have made significant contributions toward social, economic, and political transformation through non-violence and other Gandhian methods. Self-nomination is not allowed.',
+    history: 'Instituted in 1995 on the 125th birth anniversary of Mahatma Gandhi by the Government of India. It is an international award presented annually to honor contributions to peace, social justice, and human rights through non-violent means.',
+    medalDesign: 'Includes a cash prize of ₹1 crore (approximately USD 120,000), a citation scroll, a specially designed medal featuring Mahatma Gandhi\'s image, and a traditional Indian shawl presented as a gesture of honor.',
+    notableWinners: [
+      { name: 'Julius Nyerere', year: 1995, note: 'First Awardee - First President of Tanzania' },
+      { name: 'Dr. Nelson Mandela', year: 2000, note: 'Former President of South Africa, anti-apartheid revolutionary' },
+      { name: 'Archbishop Desmond Tutu', year: 2001, note: 'South African bishop and anti-apartheid activist' },
+      { name: 'Coretta Scott King', year: 2004, note: 'American civil rights activist' },
+      { name: 'Václav Havel', year: 2003, note: 'Czech playwright, dissident, and former President' }
+    ],
+    interestingFacts: [
+      'The award is administered by the Ministry of Culture, Government of India, with a distinguished jury including the Prime Minister, Leader of Opposition, and Chief Justice of India.',
+      'It has an international scope, recognizing individuals and institutions from around the world, not just India.',
+      'The award is typically announced on October 2nd (Gandhi Jayanti), the birth anniversary of Mahatma Gandhi.',
+      'At ₹1 crore, it has one of the highest cash components among Indian awards.',
+      'Both individuals and institutions are eligible, recognizing collective efforts toward peace and social transformation.'
     ]
   }
 };

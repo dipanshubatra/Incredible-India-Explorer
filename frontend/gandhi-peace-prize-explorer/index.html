@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gandhi Peace Prize Explorer - Discover India's prestigious international award recognizing contributions toward social, economic, and political transformation through non-violence.">
+    <title>Gandhi Peace Prize Explorer | Incredible India Explorer</title>
+    <link rel="icon" href="data:,">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="Gandhi Peace Prize Explorer | India's International Peace Award">
+    <meta property="og:description" content="Explore the Gandhi Peace Prize - India's prestigious international award recognizing contributions toward social, economic, and political transformation through non-violence.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+</head>
+
+<body class="gandhi-page-body">
+    <!-- Navbar Header -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../../index.html#home" class="nav-logo" id="nav-logo">
+                <span class="saffron">Incredible</span>
+                <span class="gold">India</span>
+                <span class="green">Explorer</span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../../index.html#home" class="nav-link">Home</a>
+                <a href="../learn/learn.html" class="nav-link">Learn</a>
+                <a href="../national-awards/national-awards.html" class="nav-link">National Awards</a>
+                <a href="index.html" class="nav-link active" style="color: #D4AF37">Gandhi Peace Prize</a>
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="gandhi-main">
+        <!-- Hero Banner -->
+        <section class="gandhi-hero">
+            <span class="gandhi-kicker">🕊️ Peace Through Non-Violence</span>
+            <h1>Gandhi Peace Prize Explorer</h1>
+            <p>Discover India's prestigious international award recognizing exceptional contributions toward social, economic, and political transformation through non-violence and other Gandhian methods.</p>
+            
+            <div class="gandhi-hero-stats">
+                <div class="gandhi-hero-stat">
+                    <strong>1995</strong>
+                    <span>Year Instituted</span>
+                </div>
+                <div class="gandhi-hero-stat">
+                    <strong>₹1 Crore</strong>
+                    <span>Prize Amount</span>
+                </div>
+                <div class="gandhi-hero-stat">
+                    <strong>International</strong>
+                    <span>Scope</span>
+                </div>
+                <div class="gandhi-hero-stat">
+                    <strong>25+</strong>
+                    <span>Recipients</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <div class="gandhi-nav-tabs">
+            <button class="gandhi-tab active" data-tab="history">📜 History</button>
+            <button class="gandhi-tab" data-tab="year-instituted">📅 Year Instituted</button>
+            <button class="gandhi-tab" data-tab="eligibility">📋 Eligibility</button>
+            <button class="gandhi-tab" data-tab="selection">🎯 Selection Committee</button>
+            <button class="gandhi-tab" data-tab="prize">🏆 Prize Components</button>
+            <button class="gandhi-tab" data-tab="recipients">👥 International Recipients</button>
+            <button class="gandhi-tab" data-tab="timeline">⏳ Timeline</button>
+            <button class="gandhi-tab" data-tab="facts">💡 Interesting Facts</button>
+            <button class="gandhi-tab" data-tab="gallery">🖼️ Image Gallery</button>
+        </div>
+
+        <!-- History Section -->
+        <section id="history" class="gandhi-section active">
+            <div class="gandhi-content-card">
+                <h2>📜 History of Gandhi Peace Prize</h2>
+                <div class="gandhi-content">
+                    <p>The Gandhi Peace Prize was instituted in 1995 on the occasion of the 125th birth anniversary of Mahatma Gandhi. It is an international award presented annually by the Government of India to individuals or institutions for their contributions toward social, economic, and political transformation through non-violence and other Gandhian methods.</p>
+                    
+                    <h3>Inspiration and Vision</h3>
+                    <p>The award was inspired by Mahatma Gandhi's philosophy of non-violence (Ahimsa) and his lifelong commitment to peace, truth, and social justice. The vision behind the prize is to honor those who have made significant efforts to promote peace, harmony, and human welfare across the world, following Gandhian principles.</p>
+                    
+                    <h3>Global Recognition</h3>
+                    <p>Unlike many other Indian awards, the Gandhi Peace Prize has an international scope. It recognizes individuals and institutions from around the world who have worked tirelessly for peace, social justice, and human rights, making India's commitment to Gandhian values visible on the global stage.</p>
+                    
+                    <h3>Evolution and Impact</h3>
+                    <p>Since its inception, the prize has been awarded to world leaders, social activists, organizations, and institutions that have demonstrated exceptional commitment to non-violent conflict resolution, poverty alleviation, environmental protection, and the promotion of human dignity and equality.</p>
+                    
+                    <h3>Institutional Framework</h3>
+                    <p>The award is administered by the Ministry of Culture, Government of India, with a distinguished jury comprising the Prime Minister of India, the Leader of Opposition in the Lok Sabha, the Chief Justice of India, and other eminent persons. This ensures the selection process maintains the highest standards of integrity and impartiality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Year Instituted Section -->
+        <section id="year-instituted" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>📅 Year Instituted</h2>
+                <div class="gandhi-content">
+                    <div class="year-instituted-highlight">
+                        <div class="year-display">1995</div>
+                        <div class="year-context">125th Birth Anniversary of Mahatma Gandhi</div>
+                    </div>
+                    
+                    <h3>Historical Context</h3>
+                    <p>The Gandhi Peace Prize was instituted in 1995 as part of the nationwide celebrations marking the 125th birth anniversary of Mahatma Gandhi (October 2, 1869 - January 30, 1948). The year 1995 was chosen to honor the Father of the Nation's enduring legacy and his contributions to India's independence movement and global philosophy of non-violence.</p>
+                    
+                    <h3>Government Initiative</h3>
+                    <p>The award was established by the Government of India through a Cabinet decision, reflecting the nation's commitment to perpetuate Gandhian values and principles. The institution of the prize was announced by the then Prime Minister, emphasizing India's desire to recognize and promote peace and non-violence on the international stage.</p>
+                    
+                    <h3>First Award Ceremony</h3>
+                    <p>The first Gandhi Peace Prize was awarded in 1995, making it a relatively young award compared to some of India's other prestigious honors. Despite its recent inception, it has quickly gained international recognition as one of the most significant peace awards in the world.</p>
+                    
+                    <h3>Significance of the Year</h3>
+                    <p>Choosing 1995 was significant as it marked a century and a quarter since Gandhi's birth, providing an opportunity to reflect on his enduring influence and the continued relevance of his teachings in the modern world. The award serves as a living tribute to his message of peace and non-violence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility Section -->
+        <section id="eligibility" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>📋 Eligibility Criteria</h2>
+                <div class="gandhi-content">
+                    <div class="eligibility-grid">
+                        <div class="eligibility-item">
+                            <h3>🌍 International Scope</h3>
+                            <p>The award is open to individuals, institutions, or organizations from any country, not just India. This international scope reflects Gandhi's universal message of peace and non-violence.</p>
+                        </div>
+                        
+                        <div class="eligibility-item">
+                            <h3>🕊️ Non-Violent Methods</h3>
+                            <p>Candidates must have made significant contributions toward social, economic, and political transformation through non-violence and other Gandhian methods. This is the core eligibility criterion.</p>
+                        </div>
+                        
+                        <div class="eligibility-item">
+                            <h3>🤝 Social Transformation</h3>
+                            <p>The award recognizes work in areas such as conflict resolution, poverty alleviation, environmental protection, human rights, and social justice. The impact should be substantial and measurable.</p>
+                        </div>
+                        
+                        <div class="eligibility-item">
+                            <h3>📜 No Self-Nomination</h3>
+                            <p>Candidates cannot nominate themselves. Nominations must come from recognized institutions, government bodies, or eminent individuals with credibility in the field of peace and social work.</p>
+                        </div>
+                        
+                        <div class="eligibility-item">
+                            <h3>🏛️ Institutional Eligibility</h3>
+                            <p>Both individuals and institutions are eligible. Institutions can include NGOs, international organizations, foundations, and other entities working for peace and social transformation.</p>
+                        </div>
+                        
+                        <div class="eligibility-item">
+                            <h3>⚖️ Ethical Standards</h3>
+                            <p>Candidates must demonstrate high ethical standards and integrity. Their work should be free from controversy and should genuinely reflect Gandhian principles of truth, non-violence, and service to humanity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selection Committee Section -->
+        <section id="selection" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>🎯 Selection Committee</h2>
+                <div class="gandhi-content">
+                    <p>The Gandhi Peace Prize selection committee is a distinguished panel comprising high-ranking constitutional authorities and eminent personalities, ensuring the highest standards of impartiality and credibility.</p>
+                    
+                    <div class="committee-structure">
+                        <div class="committee-member">
+                            <div class="member-icon">👤</div>
+                            <h3>Prime Minister of India</h3>
+                            <p>Chairperson of the jury, providing leadership and final decision-making authority in the selection process.</p>
+                        </div>
+                        
+                        <div class="committee-member">
+                            <div class="member-icon">👤</div>
+                            <h3>Leader of Opposition in Lok Sabha</h3>
+                            <p>Ensures political balance and bipartisan representation in the selection process.</p>
+                        </div>
+                        
+                        <div class="committee-member">
+                            <div class="member-icon">⚖️</div>
+                            <h3>Chief Justice of India</h3>
+                            <p>Brings judicial wisdom and ensures the selection process adheres to the highest standards of fairness and justice.</p>
+                        </div>
+                        
+                        <div class="committee-member">
+                            <div class="member-icon">👤</div>
+                            <h3>Eminent Jurist</h3>
+                            <p>A distinguished legal expert nominated by the government to provide legal perspective and expertise.</p>
+                        </div>
+                        
+                        <div class="committee-member">
+                            <div class="member-icon">👤</div>
+                            <h3>Eminent Person</h3>
+                            <p>A person of high standing and reputation, often with expertise in peace studies or social work.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="selection-process">
+                        <h3>Selection Process</h3>
+                        <ul>
+                            <li><strong>Nomination Phase:</strong> Nominations are invited from various sources including government agencies, NGOs, educational institutions, and eminent individuals worldwide.</li>
+                            <li><strong>Screening:</strong> A preliminary screening committee reviews nominations for completeness and basic eligibility.</li>
+                            <li><strong>Expert Evaluation:</strong> Shortlisted candidates are evaluated by experts in relevant fields to assess the impact and authenticity of their work.</li>
+                            <li><strong>Jury Deliberation:</strong> The selection committee meets to discuss and evaluate the shortlisted candidates based on established criteria.</li>
+                            <li><strong>Final Decision:</strong> The jury reaches a consensus on the award recipient, typically through unanimous decision.</li>
+                            <li><strong>Announcement:</strong> The award is announced by the Government of India, typically on October 2nd (Gandhi Jayanti).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prize Components Section -->
+        <section id="prize" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>🏆 Prize Components</h2>
+                <div class="gandhi-content">
+                    <p>The Gandhi Peace Prize consists of several components that honor the recipient and provide support for their continued work in peace and social transformation.</p>
+                    
+                    <div class="prize-components-grid">
+                        <div class="prize-component">
+                            <div class="component-icon">💰</div>
+                            <h3>Cash Award</h3>
+                            <p>A cash prize of ₹1 crore (approximately USD 120,000) is awarded to the recipient. This substantial amount is intended to support the recipient's ongoing work in peace and social transformation.</p>
+                        </div>
+                        
+                        <div class="prize-component">
+                            <div class="component-icon">📜</div>
+                            <h3>Citation</h3>
+                            <p>A beautifully crafted citation scroll that details the recipient's achievements and the reasons for conferring the award. This citation serves as a permanent record of the honor.</p>
+                        </div>
+                        
+                        <div class="prize-component">
+                            <div class="component-icon">🏅</div>
+                            <h3>Medal/Plaque</h3>
+                            <p>A specially designed medal or plaque featuring Mahatma Gandhi's image and symbols representing peace and non-violence. The design is elegant and carries significant symbolic value.</p>
+                        </div>
+                        
+                        <div class="prize-component">
+                            <div class="component-icon">🎗️</div>
+                            <h3>Traditional Shawl</h3>
+                            <p>A traditional Indian shawl is presented to the recipient as a gesture of respect and honor, following Indian cultural traditions of welcoming distinguished guests.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="prize-significance">
+                        <h3>Significance of Components</h3>
+                        <p>The combination of cash award, citation, and medal creates a comprehensive honor that not only recognizes past achievements but also enables future work. The cash prize is particularly significant as it provides financial support for the recipient's ongoing initiatives, ensuring that the award has a practical impact beyond mere recognition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Recipients Section -->
+        <section id="recipients" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>👥 International Recipients</h2>
+                <div class="gandhi-content">
+                    <p>The Gandhi Peace Prize has been awarded to distinguished individuals and institutions from around the world who have made exceptional contributions to peace and social transformation.</p>
+                    
+                    <div class="recipients-gallery">
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👨‍🦳</div>
+                            <h3>Julius Nyerere</h3>
+                            <p class="recipient-year">1995 - First Awardee</p>
+                            <p>First President of Tanzania. Recognized for his leadership in Tanzania's independence movement and his commitment to African unity and socialist development through peaceful means.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👨‍🦳</div>
+                            <h3>Dr. Nelson Mandela</h3>
+                            <p class="recipient-year">2000</p>
+                            <p>Former President of South Africa and anti-apartheid revolutionary. Honored for his struggle against apartheid through non-violent means and his promotion of reconciliation and peace.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👩‍🦳</div>
+                            <h3>Archbishop Desmond Tutu</h3>
+                            <p class="recipient-year">2001</p>
+                            <p>South African Anglican bishop and theologian. Recognized for his tireless work against apartheid and his leadership in the Truth and Reconciliation Commission.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👨‍🦳</div>
+                            <h3>Dr. A.T. Ariyaratne</h3>
+                            <p class="recipient-year">2002</p>
+                            <p>Sri Lankan social activist and founder of Sarvodaya Shramadana Movement. Honored for his grassroots development work and promotion of community-based development.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👩‍🦳</div>
+                            <h3>Václav Havel</h3>
+                            <p class="recipient-year">2003</p>
+                            <p>Czech playwright, dissident, and former President. Recognized for his role in the Velvet Revolution and his commitment to human rights and democracy through non-violent means.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👨‍🦳</div>
+                            <h3>Coretta Scott King</h3>
+                            <p class="recipient-year">2004</p>
+                            <p>American civil rights activist and wife of Martin Luther King Jr. Honored for her continued work in civil rights and non-violent social change.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👨‍🦳</div>
+                            <h3>Lester B. Pearson</h3>
+                            <p class="recipient-year">2005</p>
+                            <p>Former Prime Minister of Canada. Recognized for his role in resolving the Suez Crisis through peaceful means and his contributions to international peacekeeping.</p>
+                        </div>
+                        
+                        <div class="recipient-card">
+                            <div class="recipient-avatar">👨‍🦳</div>
+                            <h3>Desmond Tutu</h3>
+                            <p class="recipient-year">2007</p>
+                            <p>South African Anglican bishop. Honored for his continued work in peace and reconciliation, and his fight against HIV/AIDS and poverty.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipient-impact">
+                        <h3>Global Impact</h3>
+                        <ul>
+                            <li>Recipients come from diverse backgrounds including politics, social activism, religion, and grassroots movements</li>
+                            <li>The award has recognized leaders from Africa, Europe, Asia, and the Americas, reflecting its truly international scope</li>
+                            <li>Many recipients have also received other prestigious international awards including the Nobel Peace Prize</li>
+                            <li>The award has highlighted important causes including anti-apartheid movement, civil rights, and environmental protection</li>
+                            <li>Recipients' work continues to inspire new generations of peace activists and social reformers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>⏳ Timeline and Milestones</h2>
+                <div class="gandhi-content">
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1995</div>
+                            <div class="timeline-content">
+                                <h3>Institution of the Award</h3>
+                                <p>The Gandhi Peace Prize was instituted by the Government of India on the 125th birth anniversary of Mahatma Gandhi.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">1995</div>
+                            <div class="timeline-content">
+                                <h3>First Award Presented</h3>
+                                <p>Julius Nyerere, the first President of Tanzania, became the first recipient of the Gandhi Peace Prize.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000</div>
+                            <div class="timeline-content">
+                                <h3>Nelson Mandela Honored</h3>
+                                <p>Dr. Nelson Mandela received the award for his struggle against apartheid and promotion of reconciliation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2001</div>
+                            <div class="timeline-content">
+                                <h3>Archbishop Desmond Tutu</h3>
+                                <p>The South African bishop was recognized for his fight against apartheid and truth and reconciliation work.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2004</div>
+                            <div class="timeline-content">
+                                <h3>Coretta Scott King</h3>
+                                <p>The American civil rights activist was honored for her continued work in civil rights and non-violent social change.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010</div>
+                            <div class="timeline-content">
+                                <h3>Institutional Recognition</h3>
+                                <p>The award began recognizing institutions and organizations alongside individuals for their collective contributions to peace.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015</div>
+                            <div class="timeline-content">
+                                <h3>20th Anniversary</h3>
+                                <p>The award completed 20 years of recognizing exceptional contributions to peace and non-violence.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <h3>30th Anniversary</h3>
+                                <p>The award celebrates 30 years of honoring individuals and institutions working for peace through Gandhian principles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interesting Facts Section -->
+        <section id="facts" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>💡 Interesting Facts</h2>
+                <div class="gandhi-content">
+                    <div class="facts-grid">
+                        <div class="fact-item">
+                            <h3>🎁 No Self-Nomination</h3>
+                            <p>Unlike many awards, candidates cannot nominate themselves for the Gandhi Peace Prize. All nominations must come from external sources.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>🌍 Truly International</h3>
+                            <p>The award has been presented to individuals from Africa, Europe, Asia, and the Americas, making it one of India's most international awards.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>💰 Generous Cash Prize</h3>
+                            <p>At ₹1 crore, the Gandhi Peace Prize has one of the highest cash components among Indian awards, reflecting its importance.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>⚖️ Distinguished Jury</h3>
+                            <p>The selection committee includes the Prime Minister, Leader of Opposition, and Chief Justice, ensuring the highest level of credibility.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>🕊️ Gandhian Principles</h3>
+                            <p>The award specifically recognizes work done through non-violence and Gandhian methods, making it unique among peace awards.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>🏛️ Ministry of Culture</h3>
+                            <p>The award is administered by the Ministry of Culture, Government of India, emphasizing its cultural and philosophical significance.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>📅 Gandhi Jayanti</h3>
+                            <p>The award is typically announced on October 2nd, Gandhi Jayanti, the birth anniversary of Mahatma Gandhi.</p>
+                        </div>
+                        
+                        <div class="fact-item">
+                            <h3>🤝 Institutional Eligibility</h3>
+                            <p>Both individuals and institutions can receive the award, recognizing collective efforts toward peace and social transformation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section id="gallery" class="gandhi-section">
+            <div class="gandhi-content-card">
+                <h2>🖼️ Image Gallery</h2>
+                <div class="gandhi-content">
+                    <p>A visual tribute to the Gandhi Peace Prize and its recipients, showcasing award ceremonies, recipients' work, and the enduring legacy of Mahatma Gandhi's philosophy.</p>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">🏆</div>
+                            <h3>Award Ceremony</h3>
+                            <p>Prestigious ceremony where the Gandhi Peace Prize is presented by the President of India to the recipient.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">🕊️</div>
+                            <h3>Peace Symbolism</h3>
+                            <p>The award medal and plaque feature symbols representing peace, non-violence, and Gandhian philosophy.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">👨‍🦳</div>
+                            <h3>Recipient Portraits</h3>
+                            <p>Photographs of distinguished recipients including world leaders and social activists receiving the honor.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">🌍</div>
+                            <h3>Global Impact</h3>
+                            <p>Images showing the global reach of the award and its impact on communities around the world.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">🤝</div>
+                            <h3>Peace Initiatives</h3>
+                            <p>Visual documentation of peace initiatives and social transformation projects by award recipients.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">📜</div>
+                            <h3>Citation Ceremony</h3>
+                            <p>The presentation of the citation scroll and medal to the award recipient at the ceremony.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">🎗️</div>
+                            <h3>Traditional Honor</h3>
+                            <p>The presentation of traditional Indian shawls to recipients as a mark of respect and honor.</p>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">🏛️</div>
+                            <h3>Rashtrapati Bhavan</h3>
+                            <p>The award ceremony typically takes place at Rashtrapati Bhavan, the official residence of the President of India.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="gandhi-footer">
+        <p>Part of <a href="../../index.html" style="color: #FF9933;">Incredible India Explorer</a> · Celebrating peace through non-violence and Gandhian principles.</p>
+    </footer>
+
+    <!-- Client Script -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
