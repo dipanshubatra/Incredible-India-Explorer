@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     INDIAN WILDLIFE & ECOTOURISM EXPLORER — DASHBOARD
+     Enterprise-grade interactive suite for exploring India's national parks,
+     wildlife sanctuaries, and ecotourism destinations.
+     ========================================================================== -->
+<head>
+    <script>(function(){const t=localStorage.getItem('theme')||'dark';if(t==='light')document.body.classList.add('light-theme');})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore India's wildlife sanctuaries, national parks, and ecotourism destinations.">
+    <title>Indian Wildlife &amp; Ecotourism Explorer | Incredible India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/design-tokens.css">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Indian Wildlife & Ecotourism Explorer | Incredible India">
+    <meta property="og:description" content="Interactive dashboard for India's wildlife, national parks, and ecotourism.">
+    <meta property="og:site_name" content="Incredible India Explorer">
+    <link rel="canonical" href="https://incredibleindiaexplorer.gov.in/wildlife-ecotourism.html">
+</head>
+<body class="wildlife-page-body">
+
+    <!-- NAVBAR -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../../index.html#home" class="nav-logo"><span class="saffron">Incredible</span> <span class="gold">India</span> <span class="green">Explorer</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Main">
+                <a href="#parks" class="nav-link">Parks</a>
+                <a href="#sanctuaries" class="nav-link">Sanctuaries</a>
+                <a href="#species" class="nav-link">Species</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="wildlife-hero" id="hero" aria-label="Hero">
+        <div class="hero-canopy" aria-hidden="true"></div>
+        <div class="hero-content">
+            <span class="hero-kicker">Biodiversity of India</span>
+            <h1>Indian Wildlife &amp; <span>Eco</span>tourism</h1>
+            <p>From the mangroves of the Sundarbans to the alpine meadows of Ladakh, India shelters 8% of the world's biodiversity across 100+ national parks and 500+ wildlife sanctuaries.</p>
+            <div class="hero-stats">
+                <div class="stat-card"><span class="stat-number" id="stat-parks">0</span><span class="stat-label">National Parks</span></div>
+                <div class="stat-card"><span class="stat-number" id="stat-sanctuaries">0</span><span class="stat-label">Sanctuaries</span></div>
+                <div class="stat-card"><span class="stat-number" id="stat-species">0</span><span class="stat-label">Species</span></div>
+                <div class="stat-card"><span class="stat-number" id="stat-states">0</span><span class="stat-label">States</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="search-section" id="search" aria-label="Search">
+        <div class="search-container">
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2"/></svg>
+                <input type="text" id="global-search" class="search-input" placeholder="Search parks, sanctuaries, species…" aria-label="Search">
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="park" aria-pressed="false">Parks</button>
+                <button class="filter-btn" data-filter="sanctuary" aria-pressed="false">Sanctuaries</button>
+                <button class="filter-btn" data-filter="species" aria-pressed="false">Species</button>
+            </div>
+            <div class="sort-group">
+                <label for="sort-select" class="sr-only">Sort</label>
+                <select id="sort-select" class="sort-select" aria-label="Sort">
+                    <option value="name-asc">Name A→Z</option>
+                    <option value="name-desc">Name Z→A</option>
+                    <option value="origin">By State</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: NATIONAL PARKS -->
+    <section class="explorer-section" id="parks" aria-label="National Parks">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">🦁 National <span>Parks</span></h2>
+                <p class="section-subtitle">Explore India's premier national parks — each one a unique ecosystem protecting endangered species and fragile habitats.</p>
+            </div>
+            <div class="sub-filter-bar">
+                <button class="sub-filter active" data-biome="all" aria-pressed="true">All Biomes</button>
+                <button class="sub-filter" data-biome="tropical" aria-pressed="false">🌴 Tropical</button>
+                <button class="sub-filter" data-biome="grassland" aria-pressed="false">🌾 Grassland</button>
+                <button class="sub-filter" data-biome="mountain" aria-pressed="false">🏔️ Mountain</button>
+                <button class="sub-filter" data-biome="wetland" aria-pressed="false">🌊 Wetland</button>
+                <button class="sub-filter" data-biome="desert" aria-pressed="false">🏜️ Desert</button>
+            </div>
+            <div class="card-grid" id="park-grid" role="list"></div>
+            <div class="empty-state" id="park-empty" hidden><p>No parks match your filters.</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: WILDLIFE SANCTUARIES -->
+    <section class="explorer-section" id="sanctuaries" aria-label="Wildlife Sanctuaries">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">🦌 Wildlife <span>Sanctuaries</span></h2>
+                <p class="section-subtitle">India's wildlife sanctuaries protect diverse ecosystems from tropical forests to high-altitude deserts.</p>
+            </div>
+            <div class="sub-filter-bar">
+                <button class="sub-filter active" data-habitat="all" aria-pressed="true">All Habitats</button>
+                <button class="sub-filter" data-habitat="forest" aria-pressed="false">🌲 Forest</button>
+                <button class="sub-filter" data-habitat="coastal" aria-pressed="false">🏖️ Coastal</button>
+                <button class="sub-filter" data-habitat="riverine" aria-pressed="false">🏞️ Riverine</button>
+                <button class="sub-filter" data-habitat="grassland" aria-pressed="false">🌾 Grassland</button>
+            </div>
+            <div class="card-grid" id="sanctuary-grid" role="list"></div>
+            <div class="empty-state" id="sanctuary-empty" hidden><p>No sanctuaries match your filters.</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: KEY SPECIES -->
+    <section class="explorer-section" id="species" aria-label="Key Species">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">🐅 Key <span>Species</span></h2>
+                <p class="section-subtitle">India is home to iconic species found nowhere else on Earth — each one a critical part of the ecosystem.</p>
+            </div>
+            <div class="sub-filter-bar">
+                <button class="sub-filter active" data-conservation="all" aria-pressed="true">All Status</button>
+                <button class="sub-filter" data-conservation="endangered" aria-pressed="false">🔴 Endangered</button>
+                <button class="sub-filter" data-conservation="vulnerable" aria-pressed="false">🟡 Vulnerable</button>
+                <button class="sub-filter" data-conservation="least-concern" aria-pressed="false">🟢 Least Concern</button>
+            </div>
+            <div class="species-grid" id="species-grid" role="list"></div>
+            <div class="empty-state" id="species-empty" hidden><p>No species match your filters.</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: ANALYTICS -->
+    <section class="explorer-section analytics-section" id="analytics" aria-label="Analytics">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">📊 Analytics <span>Dashboard</span></h2>
+                <p class="section-subtitle">Geographic and categorical breakdown of India's wildlife heritage.</p>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card"><h3>State-wise Distribution</h3><div class="chart-bar-container" id="state-chart" role="img" aria-label="State distribution"></div></div>
+                <div class="analytics-card"><h3>Biome Distribution</h3><div class="biome-distribution" id="biome-chart" role="img" aria-label="Biome distribution"></div></div>
+                <div class="analytics-card"><h3>Conservation Status</h3><div class="conservation-breakdown" id="conservation-chart" role="img" aria-label="Conservation status"></div></div>
+                <div class="analytics-card"><h3>Wildlife Heritage Timeline</h3><div class="timeline-chart" id="timeline-chart" role="img" aria-label="Timeline"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wildlife-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="footer-brand">🇮🇳 Incredible India Explorer — Wildlife &amp; Ecotourism Suite</p>
+                <p class="footer-credits">Built with ❤️ for India's wildlife heritage. Data sourced from Project Tiger, Project Elephant, and Ministry of Environment.</p>
+                <div class="footer-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="../wildlife/">Wildlife</a>
+                    <a href="../national-parks-explorer/">Parks</a>
+                    <a href="#hero">Back to Top</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="wildlife-engine.js"></script>
+</body>
+</html>
