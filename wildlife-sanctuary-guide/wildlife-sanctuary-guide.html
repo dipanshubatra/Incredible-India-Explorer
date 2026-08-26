@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>(function(){var t=localStorage.getItem('theme')||'dark';if(t==='light')document.body.classList.add('light-theme')})();</script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Wildlife Sanctuary Guide — Discover India's protected wildlife sanctuaries and their conservation stories." name="description"/>
+    <title>Wildlife Sanctuary Guide | Incredible India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="../pages-common.css"/>
+    <link rel="stylesheet" href="wildlife-sanctuary-guide.css"/>
+</head>
+<body>
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html#home" class="nav-logo"><span class="saffron">Incredible</span><span class="gold">India</span><span class="green">Explorer</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#map" class="nav-link">Interactive Map</a>
+                <a href="../cuisine.html" class="nav-link">Cuisine</a>
+                <a href="../festivals.html" class="nav-link">Festivals</a>
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode">☀️</button>
+            </nav>
+        </div>
+    </header>
+    <main id="app-root" style="padding-top:80px">
+        <section class="ws-hero">
+            <span class="ws-badge">🌿 Conservation</span>
+            <h1 class="ws-title">Wildlife <span class="ws-accent">Sanctuary</span> Guide</h1>
+            <p class="ws-subtitle">Explore India's protected wildlife sanctuaries — from the snow leopards of Ladakh to the elephants of Kerala.</p>
+            <div class="ws-hero-stats">
+                <div class="ws-stat"><span class="ws-stat-num" id="ws-total">0</span><span class="ws-stat-lbl">Sanctuaries</span></div>
+                <div class="ws-stat"><span class="ws-stat-num" id="ws-states">0</span><span class="ws-stat-lbl">States</span></div>
+                <div class="ws-stat"><span class="ws-stat-num" id="ws-species">0</span><span class="ws-stat-lbl">Key Species</span></div>
+            </div>
+        </section>
+        <section class="ws-controls">
+            <div class="ws-search-wrap">
+                <input type="text" id="ws-search" placeholder="Search sanctuaries, species, states..." aria-label="Search wildlife sanctuaries"/>
+            </div>
+            <div class="ws-filters" id="ws-filters"></div>
+        </section>
+        <section class="ws-grid-section">
+            <div class="ws-label" id="ws-label"></div>
+            <div class="ws-grid" id="ws-grid" role="list"></div>
+            <div class="ws-empty" id="ws-empty" style="display:none"><p>No sanctuaries found.</p><button class="ws-btn" id="ws-reset">Reset</button></div>
+        </section>
+        <div class="ws-modal" id="ws-modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="ws-modal-bg" id="ws-modal-bg"></div>
+            <div class="ws-modal-box"><button class="ws-modal-x" id="ws-modal-x" aria-label="Close">✕</button><div class="ws-modal-body" id="ws-modal-body"></div></div>
+        </div>
+    </main>
+    <script src="../app.js"></script>
+    <script src="wildlife-sanctuary-guide.js"></script>
+</body>
+</html>
