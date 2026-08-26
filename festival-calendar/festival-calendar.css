@@ -1,0 +1,68 @@
+/* Festival Calendar — Compact Styles */
+:root{--fc:#e8a838;--fc-bg:#0a0a0f;--fc-card:#141420;--fc-txt:#e8e8f0;--fc-mt:#8888a0;--fc-dm:#555570;--fc-bd:rgba(255,255,255,.06);--fc-r:12px;--fc-tr:.3s ease;--fc-f:'Outfit',sans-serif;--fc-fd:'Playfair Display',Georgia,serif}
+body.light-theme{--fc-bg:#f5f3ef;--fc-card:#fff;--fc-txt:#1a1a2e;--fc-mt:#555570;--fc-dm:#8888a0;--fc-bd:rgba(0,0,0,.08)}
+.fc-hero,.fc-controls,.fc-grid-section,.fc-modal{font-family:var(--fc-f);color:var(--fc-txt);background:var(--fc-bg)}
+
+.fc-hero{text-align:center;padding:60px 24px 40px;background:linear-gradient(160deg,#0d0d1a,#1a1028 40%,#0d0d1a)}
+body.light-theme .fc-hero{background:linear-gradient(160deg,#f5f3ef,#ebe4d8 40%,#f5f3ef)}
+.fc-badge{display:inline-block;padding:5px 16px;background:rgba(232,168,56,.12);border:1px solid rgba(232,168,56,.25);border-radius:100px;font-size:.8rem;font-weight:600;color:var(--fc);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.fc-title{font-family:var(--fc-fd);font-size:clamp(2rem,5vw,3rem);margin:0 0 12px}
+.fc-accent{color:var(--fc)}
+.fc-subtitle{font-size:1rem;line-height:1.7;color:var(--fc-mt);max-width:560px;margin:0 auto}
+
+.fc-controls{position:sticky;top:60px;z-index:50;padding:14px 24px;border-bottom:1px solid var(--fc-bd);backdrop-filter:blur(12px);background:rgba(10,10,15,.88);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+body.light-theme .fc-controls{background:rgba(245,243,239,.92)}
+.fc-search-wrap{width:100%;max-width:320px}
+.fc-search-wrap input{width:100%;padding:9px 16px;background:var(--fc-card);border:1px solid var(--fc-bd);border-radius:8px;color:var(--fc-txt);font-family:var(--fc-f);font-size:.85rem;outline:none;transition:border-color var(--fc-tr)}
+.fc-search-wrap input:focus{border-color:var(--fc);box-shadow:0 0 0 3px rgba(232,168,56,.12)}
+.fc-search-wrap input::placeholder{color:var(--fc-dm)}
+.fc-month-nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.fc-month-btn{padding:6px 14px;background:var(--fc-card);border:1px solid var(--fc-bd);border-radius:100px;color:var(--fc-mt);font-family:var(--fc-f);font-size:.75rem;font-weight:500;cursor:pointer;transition:all var(--fc-tr);white-space:nowrap}
+.fc-month-btn:hover{border-color:var(--fc);color:var(--fc-txt)}
+.fc-month-btn.active{background:rgba(232,168,56,.15);border-color:var(--fc);color:var(--fc);font-weight:600}
+
+.fc-grid-section{padding:30px 24px 60px}
+.fc-month-label{font-family:var(--fc-fd);font-size:1.4rem;color:var(--fc);text-align:center;margin-bottom:20px}
+.fc-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+
+.fc-card{background:var(--fc-card);border:1px solid var(--fc-bd);border-radius:var(--fc-r);padding:20px;cursor:pointer;transition:all var(--fc-tr);animation:fcIn .35s ease both}
+@keyframes fcIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.fc-card:hover{border-color:rgba(232,168,56,.3);transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.fc-card-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.fc-card-emoji{font-size:1.8rem;line-height:1}
+.fc-card-name{font-family:var(--fc-fd);font-size:1rem;font-weight:600;margin:0}
+.fc-card-meta{font-size:.78rem;color:var(--fc);font-weight:500}
+.fc-card-desc{font-size:.82rem;line-height:1.6;color:var(--fc-mt);margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fc-card-tags{display:flex;gap:5px;flex-wrap:wrap}
+.fc-tag{padding:3px 10px;background:rgba(255,255,255,.04);border:1px solid var(--fc-bd);border-radius:100px;font-size:.65rem;color:var(--fc-dm);text-transform:uppercase;letter-spacing:.5px}
+body.light-theme .fc-tag{background:rgba(0,0,0,.03)}
+
+.fc-empty{text-align:center;padding:50px;color:var(--fc-mt)}
+.fc-empty p{margin:0 0 16px;font-size:.9rem}
+.fc-btn{padding:8px 20px;background:var(--fc-card);border:1px solid var(--fc-bd);border-radius:8px;color:var(--fc-mt);font-family:var(--fc-f);font-size:.82rem;cursor:pointer;transition:all var(--fc-tr)}
+.fc-btn:hover{border-color:var(--fc);color:var(--fc-txt)}
+
+.fc-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.fc-modal.open{opacity:1;pointer-events:all}
+.fc-modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px)}
+.fc-modal-box{position:relative;width:90%;max-width:560px;max-height:82vh;overflow-y:auto;background:var(--fc-card);border:1px solid var(--fc-bd);border-radius:var(--fc-r);box-shadow:0 20px 60px rgba(0,0,0,.45);transform:translateY(16px) scale(.97);transition:transform .3s}
+.fc-modal.open .fc-modal-box{transform:translateY(0) scale(1)}
+.fc-modal-x{position:sticky;top:12px;float:right;margin:12px 12px 0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--fc-card);border:1px solid var(--fc-bd);border-radius:50%;color:var(--fc-mt);cursor:pointer;font-size:.8rem;z-index:2;transition:all var(--fc-tr)}
+.fc-modal-x:hover{border-color:#c0392b;color:#c0392b}
+.fc-modal-body{padding:28px}
+.fc-modal-emoji{font-size:2.6rem;margin-bottom:12px}
+.fc-modal-title{font-family:var(--fc-fd);font-size:1.4rem;margin:0 0 4px}
+.fc-modal-info{font-size:.82rem;color:var(--fc);font-weight:600;margin:0 0 16px}
+.fc-modal-sec{margin-bottom:20px}
+.fc-modal-sec h4{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--fc-dm);font-weight:700;margin:0 0 8px}
+.fc-modal-sec p{font-size:.88rem;line-height:1.7;color:var(--fc-mt);margin:0}
+.fc-modal-detail{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.fc-modal-ditem{background:var(--fc-bg);border:1px solid var(--fc-bd);border-radius:8px;padding:12px}
+.fc-modal-dlbl{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--fc-dm);margin:0 0 3px}
+.fc-modal-dval{font-size:.85rem;color:var(--fc-txt);font-weight:600;margin:0}
+
+.fc-modal-box::-webkit-scrollbar{width:6px}
+.fc-modal-box::-webkit-scrollbar-track{background:transparent}
+.fc-modal-box::-webkit-scrollbar-thumb{background:var(--fc-dm);border-radius:3px}
+
+@media(max-width:768px){.fc-controls{flex-direction:column}.fc-search-wrap{max-width:100%}.fc-grid{grid-template-columns:1fr}.fc-modal-detail{grid-template-columns:1fr}.fc-hero{padding:40px 16px 30px}.fc-grid-section{padding:20px 16px 40px}}

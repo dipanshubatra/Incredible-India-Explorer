@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') document.body.classList.add('light-theme');
+        })();
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Indian Festival Calendar — Explore major festivals of India month by month." name="description"/>
+    <title>Indian Festival Calendar | Incredible India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="../pages-common.css"/>
+    <link rel="stylesheet" href="festival-calendar.css"/>
+</head>
+<body>
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html#home" class="nav-logo"><span class="saffron">Incredible</span><span class="gold">India</span><span class="green">Explorer</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#map" class="nav-link">Interactive Map</a>
+                <a href="../cuisine.html" class="nav-link">Cuisine</a>
+                <a href="../festivals.html" class="nav-link">Festivals</a>
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode">☀️</button>
+            </nav>
+        </div>
+    </header>
+    <main id="app-root" style="padding-top:80px">
+        <section class="fc-hero">
+            <span class="fc-badge">🎉 Festivals of India</span>
+            <h1 class="fc-title">Festival <span class="fc-accent">Calendar</span></h1>
+            <p class="fc-subtitle">Navigate India's vibrant festival landscape month by month — a living calendar of faith, culture, and celebration.</p>
+        </section>
+        <section class="fc-controls">
+            <div class="fc-search-wrap">
+                <input type="text" id="fc-search" placeholder="Search festivals, months..." aria-label="Search festivals"/>
+            </div>
+            <div class="fc-month-nav" id="fc-month-nav"></div>
+        </section>
+        <section class="fc-grid-section">
+            <div class="fc-month-label" id="fc-month-label"></div>
+            <div class="fc-grid" id="fc-grid" role="list"></div>
+            <div class="fc-empty" id="fc-empty" style="display:none">
+                <p>No festivals found. Try a different search or month.</p>
+                <button class="fc-btn" id="fc-reset">Reset Filters</button>
+            </div>
+        </section>
+        <div class="fc-modal" id="fc-modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="fc-modal-bg" id="fc-modal-bg"></div>
+            <div class="fc-modal-box" id="fc-modal-box">
+                <button class="fc-modal-x" id="fc-modal-x" aria-label="Close">✕</button>
+                <div class="fc-modal-body" id="fc-modal-body"></div>
+            </div>
+        </div>
+    </main>
+    <script src="../app.js"></script>
+    <script src="festival-calendar.js"></script>
+</body>
+</html>
