@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        })();
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Heritage Crafts Explorer - Discover India's rich traditional handicrafts, artisan traditions, and cultural art forms from every state." name="description"/>
+    <meta property="og:title" content="Heritage Crafts Explorer | Incredible India"/>
+    <meta property="og:description" content="Explore India's rich heritage of traditional handicrafts, from Banarasi silk to Madhubani paintings, with an interactive explorer."/>
+    <title>Heritage Crafts Explorer | Incredible India</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="../pages-common.css"/>
+    <link rel="stylesheet" href="heritage-crafts.css"/>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Heritage Crafts Explorer",
+      "description": "An interactive exploration of India's rich traditional handicraft heritage, showcasing artisan crafts from every state.",
+      "about": {
+        "@type": "Thing",
+        "name": "Indian Handicrafts"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html#home" class="nav-logo" id="nav-logo">
+                <span class="saffron">Incredible</span>
+                <span class="gold">India</span>
+                <span class="green">Explorer</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../index.html#home" class="nav-link" id="link-home">Home</a>
+                <a href="../index.html#map" class="nav-link" id="link-map">Interactive Map</a>
+                <a href="../cuisine.html" class="nav-link" id="link-cuisine">Cuisine</a>
+                <a href="../festivals.html" class="nav-link" id="link-festivals">Festivals</a>
+                <a href="../culture.html" class="nav-link" id="link-culture">Culture</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" id="link-explore-more" style="color: var(--saffron)">Explore More ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="../travel.html" class="dropdown-item">Travel & Destinations</a>
+                        <a href="../wildlife.html" class="dropdown-item">Nature & Wildlife</a>
+                        <a href="../personalities.html" class="dropdown-item">Famous Personalities</a>
+                        <a href="../spiritual.html" class="dropdown-item">Spiritual India</a>
+                        <a href="../arts-crafts.html" class="dropdown-item">Arts & Crafts</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Light Mode">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="app-root" style="padding-top: 80px;">
+
+        <!-- Hero Section -->
+        <section class="hc-hero" id="hc-hero">
+            <div class="hc-hero-particles" id="hc-hero-particles"></div>
+            <div class="hc-hero-content">
+                <span class="hc-hero-badge">🎨 Living Traditions</span>
+                <h1 class="hc-hero-title">Heritage <span class="hc-accent">Crafts</span> Explorer</h1>
+                <p class="hc-hero-subtitle">Discover India's rich tapestry of traditional handicrafts — from Banarasi silk weaving to Madhubani painting, each craft tells a story of centuries-old artistry and cultural heritage.</p>
+                <div class="hc-hero-stats">
+                    <div class="hc-stat">
+                        <span class="hc-stat-number" id="hc-total-crafts">0</span>
+                        <span class="hc-stat-label">Traditional Crafts</span>
+                    </div>
+                    <div class="hc-stat">
+                        <span class="hc-stat-number" id="hc-total-states">0</span>
+                        <span class="hc-stat-label">States Covered</span>
+                    </div>
+                    <div class="hc-stat">
+                        <span class="hc-stat-number" id="hc-total-categories">0</span>
+                        <span class="hc-stat-label">Craft Categories</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Bar -->
+        <section class="hc-controls" id="hc-controls">
+            <div class="hc-controls-inner">
+                <div class="hc-search-wrapper">
+                    <i class="fas fa-search hc-search-icon"></i>
+                    <input type="text" id="hc-search" class="hc-search-input" placeholder="Search crafts, states, materials..." aria-label="Search heritage crafts"/>
+                    <button class="hc-search-clear" id="hc-search-clear" aria-label="Clear search" hidden>✕</button>
+                </div>
+                <div class="hc-filter-group">
+                    <button class="hc-filter-btn active" data-category="all">
+                        <span class="hc-filter-icon">✦</span> All Crafts
+                    </button>
+                    <button class="hc-filter-btn" data-category="textiles">
+                        <span class="hc-filter-icon">🧵</span> Textiles
+                    </button>
+                    <button class="hc-filter-btn" data-category="painting">
+                        <span class="hc-filter-icon">🎨</span> Paintings
+                    </button>
+                    <button class="hc-filter-btn" data-category="pottery">
+                        <span class="hc-filter-icon">🏺</span> Pottery
+                    </button>
+                    <button class="hc-filter-btn" data-category="woodwork">
+                        <span class="hc-filter-icon">🪵</span> Woodwork
+                    </button>
+                    <button class="hc-filter-btn" data-category="metalwork">
+                        <span class="hc-filter-icon">⚒️</span> Metalwork
+                    </button>
+                    <button class="hc-filter-btn" data-category="jewelry">
+                        <span class="hc-filter-icon">💎</span> Jewelry
+                    </button>
+                    <button class="hc-filter-btn" data-category="stone">
+                        <span class="hc-filter-icon">🪨</span> Stone Craft
+                    </button>
+                    <button class="hc-filter-btn" data-category="paper">
+                        <span class="hc-filter-icon">📜</span> Paper Craft
+                    </button>
+                </div>
+                <div class="hc-view-controls">
+                    <button class="hc-view-btn active" data-view="grid" aria-label="Grid view" title="Grid View">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="hc-view-btn" data-view="list" aria-label="List view" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                    <select id="hc-sort" class="hc-sort-select" aria-label="Sort crafts">
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="state-asc">State (A-Z)</option>
+                        <option value="category-asc">Category</option>
+                    </select>
+                </div>
+            </div>
+            <div class="hc-results-info" id="hc-results-info"></div>
+        </section>
+
+        <!-- Featured Craft Spotlight -->
+        <section class="hc-spotlight" id="hc-spotlight" style="display:none;">
+            <div class="hc-spotlight-inner">
+                <div class="hc-spotlight-badge">✨ Spotlight</div>
+                <div class="hc-spotlight-content">
+                    <div class="hc-spotlight-info">
+                        <h2 id="hc-spotlight-title" class="hc-spotlight-title"></h2>
+                        <p id="hc-spotlight-state" class="hc-spotlight-state"></p>
+                        <p id="hc-spotlight-desc" class="hc-spotlight-desc"></p>
+                        <div id="hc-spotlight-meta" class="hc-spotlight-meta"></div>
+                        <button class="hc-btn hc-btn-primary" id="hc-spotlight-explore">Explore Details →</button>
+                    </div>
+                    <div class="hc-spotlight-visual">
+                        <div class="hc-spotlight-icon-large" id="hc-spotlight-icon"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crafts Grid -->
+        <section class="hc-crafts-section" id="hc-crafts-section">
+            <div class="hc-crafts-grid" id="hc-crafts-grid" role="list">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="hc-empty-state" id="hc-empty-state" style="display:none;">
+                <div class="hc-empty-icon">🔍</div>
+                <h3>No crafts found</h3>
+                <p>Try adjusting your search or filter to discover more heritage crafts.</p>
+                <button class="hc-btn hc-btn-secondary" id="hc-reset-filters">Reset Filters</button>
+            </div>
+        </section>
+
+        <!-- Artisan Spotlight Section -->
+        <section class="hc-artisan-section" id="hc-artisan-section">
+            <h2 class="hc-section-title">🪡 Artisan Traditions</h2>
+            <p class="hc-section-subtitle">Behind every craft is a lineage of skilled artisans who have preserved these traditions for generations.</p>
+            <div class="hc-artisan-grid" id="hc-artisan-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- State Distribution Map -->
+        <section class="hc-state-section" id="hc-state-section">
+            <h2 class="hc-section-title">🗺️ Crafts by Region</h2>
+            <p class="hc-section-subtitle">Explore the geographic distribution of India's traditional crafts.</p>
+            <div class="hc-state-chips" id="hc-state-chips">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Craft Detail Modal -->
+        <div class="hc-modal" id="hc-modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="hc-modal-backdrop" id="hc-modal-backdrop"></div>
+            <div class="hc-modal-container" id="hc-modal-container">
+                <button class="hc-modal-close" id="hc-modal-close" aria-label="Close details">✕</button>
+                <div class="hc-modal-body" id="hc-modal-body">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="hc-footer">
+            <div class="hc-footer-content">
+                <p class="hc-footer-text">Preserving India's living heritage — one craft at a time.</p>
+                <p class="hc-footer-credit">🇮🇳 Incredible India Explorer — Heritage Crafts Module</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../app.js"></script>
+    <script src="heritage-crafts.js"></script>
+</body>
+</html>
