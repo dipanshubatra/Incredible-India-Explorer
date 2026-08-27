@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     INDIAN FESTIVALS & CULTURAL CALENDAR EXPLORER — DASHBOARD
+     Enterprise-grade interactive suite for exploring India's festivals,
+     cultural events, and holiday traditions across all states and union
+     territories.
+
+     Design Decisions:
+     - Glassmorphic dark-mode aesthetic consistent with Incredible India Explorer
+     - Modular section architecture: Festivals, Regional Calendar, Traditions DB
+     - Client-side filtering, sorting, and search across all festival datasets
+     - WCAG 2.1 AA color-contrast compliance via CSS custom properties
+     - No external JS dependencies; pure vanilla implementation
+
+     Architecture Notes:
+     - FestivalEngine class in festival-engine.js handles all data logic
+     - CSS tokens imported from ../../styles/design-tokens.css for theme consistency
+     - Each section is a self-contained <section> with ARIA landmarks
+     - Responsive grid layout using CSS Grid with fallback Flexbox
+     - Festival cards use color-coded season/month badges
+     ========================================================================== -->
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore India's rich tapestry of festivals, cultural events, and holiday traditions in this interactive calendar dashboard.">
+    <title>Indian Festivals &amp; Cultural Calendar Explorer | Incredible India</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Design Tokens + Page Styles -->
+    <link rel="stylesheet" href="../../styles/design-tokens.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="Indian Festivals & Cultural Calendar Explorer | Incredible India">
+    <meta property="og:description" content="Interactive dashboard for India's festivals, cultural events, and holiday traditions.">
+    <meta property="og:image" content="https://incredibleindiaexplorer.gov.in/assets/Brihadeeswara_Temple.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://incredibleindiaexplorer.gov.in/festivals-calendar.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Incredible India Explorer">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Indian Festivals & Cultural Calendar Explorer | Incredible India">
+    <meta name="twitter:description" content="Interactive dashboard for India's festivals, cultural events, and holiday traditions.">
+    <meta name="twitter:image" content="https://incredibleindiaexplorer.gov.in/assets/Brihadeeswara_Temple.png">
+    <link rel="canonical" href="https://incredibleindiaexplorer.gov.in/festivals-calendar.html">
+</head>
+
+<body class="festivals-page-body">
+
+    <!-- ================================================================
+         NAVIGATION BAR
+         ================================================================ -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../../index.html#home" class="nav-logo" id="nav-logo">
+                <span class="saffron">Incredible</span>
+                <span class="gold">India</span>
+                <span class="green">Explorer</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Main navigation">
+                <a href="#festivals" class="nav-link">Festivals</a>
+                <a href="#calendar" class="nav-link">Calendar</a>
+                <a href="#traditions" class="nav-link">Traditions</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================================================================
+         HERO SECTION
+         ================================================================ -->
+    <section class="festivals-hero" id="hero" aria-label="Hero banner">
+        <div class="hero-rangoli-pattern" aria-hidden="true"></div>
+        <div class="hero-content">
+            <span class="hero-kicker">Celebrations of India</span>
+            <h1>Indian Festivals &amp; <span>Cultural</span> Calendar</h1>
+            <p>From the vibrant colors of Holi to the luminous diyas of Diwali, India celebrates thousands
+               of festivals throughout the year — each a reflection of its diverse cultural heritage.</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number" id="stat-festivals">0</span>
+                    <span class="stat-label">Festivals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="stat-months">0</span>
+                    <span class="stat-label">Months Covered</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="stat-traditions">0</span>
+                    <span class="stat-label">Traditions</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="stat-states">0</span>
+                    <span class="stat-label">States</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         GLOBAL SEARCH & FILTER BAR
+         ================================================================ -->
+    <section class="search-section" id="search" aria-label="Search and filter">
+        <div class="search-container">
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <input type="text" id="global-search" class="search-input"
+                       placeholder="Search festivals, months, traditions…"
+                       aria-label="Search festivals, months, and traditions">
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="festival" aria-pressed="false">Festivals</button>
+                <button class="filter-btn" data-filter="calendar" aria-pressed="false">Calendar</button>
+                <button class="filter-btn" data-filter="tradition" aria-pressed="false">Traditions</button>
+            </div>
+            <div class="sort-group">
+                <label for="sort-select" class="sr-only">Sort results</label>
+                <select id="sort-select" class="sort-select" aria-label="Sort results">
+                    <option value="name-asc">Name A→Z</option>
+                    <option value="name-desc">Name Z→A</option>
+                    <option value="month">By Month</option>
+                    <option value="origin">By Origin</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 1 — FESTIVALS EXPLORER
+         ================================================================ -->
+    <section class="explorer-section" id="festivals" aria-label="Festivals Explorer">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">🎉 Festival <span>Explorer</span></h2>
+                <p class="section-subtitle">Explore India's major festivals — each one carries deep cultural significance,
+                   unique rituals, and stories that have been passed down for centuries.</p>
+            </div>
+            <div class="sub-filter-bar">
+                <button class="sub-filter active" data-season="all" aria-pressed="true">All Seasons</button>
+                <button class="sub-filter" data-season="spring" aria-pressed="false">🌸 Spring</button>
+                <button class="sub-filter" data-season="summer" aria-pressed="false">☀️ Summer</button>
+                <button class="sub-filter" data-season="monsoon" aria-pressed="false">🌧️ Monsoon</button>
+                <button class="sub-filter" data-season="winter" aria-pressed="false">❄️ Winter</button>
+                <button class="sub-filter" data-season="year-round" aria-pressed="false">🔄 Year-round</button>
+            </div>
+            <div class="card-grid" id="festival-grid" role="list">
+                <!-- Populated dynamically by FestivalEngine -->
+            </div>
+            <div class="empty-state" id="festival-empty" hidden>
+                <p>No festivals match your current filters. Try broadening your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2 — MONTHLY CALENDAR
+         ================================================================ -->
+    <section class="explorer-section" id="calendar" aria-label="Monthly Calendar">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">📅 Monthly <span>Calendar</span></h2>
+                <p class="section-subtitle">Month-by-month breakdown of festivals and cultural events across India.</p>
+            </div>
+            <div class="sub-filter-bar">
+                <button class="sub-filter active" data-quarter="all" aria-pressed="true">All Months</button>
+                <button class="sub-filter" data-quarter="Q1" aria-pressed="false">Jan–Mar</button>
+                <button class="sub-filter" data-quarter="Q2" aria-pressed="false">Apr–Jun</button>
+                <button class="sub-filter" data-quarter="Q3" aria-pressed="false">Jul–Sep</button>
+                <button class="sub-filter" data-quarter="Q4" aria-pressed="false">Oct–Dec</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid" role="list">
+                <!-- Populated dynamically by FestivalEngine -->
+            </div>
+            <div class="empty-state" id="calendar-empty" hidden>
+                <p>No months match your current filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3 — CULTURAL TRADITIONS DATABASE
+         ================================================================ -->
+    <section class="explorer-section" id="traditions" aria-label="Cultural Traditions">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">🏮 Cultural <span>Traditions</span></h2>
+                <p class="section-subtitle">Understand the rituals, customs, and cultural practices that make each
+                   Indian festival unique and meaningful.</p>
+            </div>
+            <div class="sub-filter-bar">
+                <button class="sub-filter active" data-origin="all" aria-pressed="true">All Origins</button>
+                <button class="sub-filter" data-origin="hindu" aria-pressed="false">Hindu</button>
+                <button class="sub-filter" data-origin="muslim" aria-pressed="false">Muslim</button>
+                <button class="sub-filter" data-origin="sikh" aria-pressed="false">Sikh</button>
+                <button class="sub-filter" data-origin="christian" aria-pressed="false">Christian</button>
+                <button class="sub-filter" data-origin="buddhist" aria-pressed="false">Buddhist</button>
+            </div>
+            <div class="tradition-grid" id="tradition-grid" role="list">
+                <!-- Populated dynamically by FestivalEngine -->
+            </div>
+            <div class="empty-state" id="tradition-empty" hidden>
+                <p>No traditions match your current filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4 — ANALYTICS DASHBOARD
+         ================================================================ -->
+    <section class="explorer-section analytics-section" id="analytics" aria-label="Analytics Dashboard">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">📊 Analytics <span>Dashboard</span></h2>
+                <p class="section-subtitle">Seasonal, religious, and geographic breakdown of India's festival heritage.</p>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card" id="analytics-seasonal">
+                    <h3>Seasonal Distribution</h3>
+                    <div class="seasonal-distribution" id="season-chart" role="img"
+                         aria-label="Seasonal distribution of festivals"></div>
+                </div>
+                <div class="analytics-card" id="analytics-monthly">
+                    <h3>Monthly Festival Count</h3>
+                    <div class="chart-bar-container" id="month-chart" role="img"
+                         aria-label="Bar chart of monthly festival counts"></div>
+                </div>
+                <div class="analytics-card" id="analytics-religious">
+                    <h3>Religious Breakdown</h3>
+                    <div class="religious-breakdown" id="religious-chart" role="img"
+                         aria-label="Religious breakdown of traditions"></div>
+                </div>
+                <div class="analytics-card" id="analytics-timeline">
+                    <h3>Festival Heritage Timeline</h3>
+                    <div class="timeline-chart" id="timeline-chart" role="img"
+                         aria-label="Historical timeline"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FOOTER
+         ================================================================ -->
+    <footer class="festivals-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="footer-brand">🇮🇳 Incredible India Explorer — Festivals &amp; Cultural Calendar Suite</p>
+                <p class="footer-credits">
+                    Built with ❤️ for celebrating India's diverse festival heritage.<br>
+                    Data sourced from Ministry of Culture, Calendar of Indian Festivals, and state tourism departments.
+                </p>
+                <div class="footer-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="../festivals/">Festivals</a>
+                    <a href="../culture/">Culture</a>
+                    <a href="#hero">Back to Top</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Engine Script -->
+    <script type="module" src="festival-engine.js"></script>
+</body>
+</html>
