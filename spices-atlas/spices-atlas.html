@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>(function(){var t=localStorage.getItem('theme')||'dark';if(t==='light')document.body.classList.add('light-theme')})();</script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Spices Atlas — Explore India's rich spice heritage with origins, uses, and health benefits." name="description"/>
+    <title>Spices Atlas | Incredible India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../styles.css"/>
+    <link rel="stylesheet" href="../pages-common.css"/>
+    <link rel="stylesheet" href="spices-atlas.css"/>
+</head>
+<body>
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html#home" class="nav-logo"><span class="saffron">Incredible</span><span class="gold">India</span><span class="green">Explorer</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#map" class="nav-link">Interactive Map</a>
+                <a href="../cuisine.html" class="nav-link">Cuisine</a>
+                <a href="../festivals.html" class="nav-link">Festivals</a>
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode">☀️</button>
+            </nav>
+        </div>
+    </header>
+    <main id="app-root" style="padding-top:80px">
+        <section class="sa-hero">
+            <span class="sa-badge">🌶️ Spice Heritage</span>
+            <h1 class="sa-title">Indian <span class="sa-accent">Spices</span> Atlas</h1>
+            <p class="sa-subtitle">Journey through the aromatic world of Indian spices — their origins, culinary uses, health benefits, and the trade routes that made India the Spice Bowl of the World.</p>
+        </section>
+        <section class="sa-controls">
+            <div class="sa-search-wrap"><input type="text" id="sa-search" placeholder="Search spices, regions, uses..." aria-label="Search spices"/></div>
+            <div class="sa-filters" id="sa-filters"></div>
+        </section>
+        <section class="sa-grid-section">
+            <div class="sa-grid" id="sa-grid" role="list"></div>
+            <div class="sa-empty" id="sa-empty" style="display:none"><p>No spices found.</p><button class="sa-btn" id="sa-reset">Reset</button></div>
+        </section>
+        <div class="sa-modal" id="sa-modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="sa-modal-bg" id="sa-modal-bg"></div>
+            <div class="sa-modal-box"><button class="sa-modal-x" id="sa-modal-x" aria-label="Close">✕</button><div class="sa-modal-body" id="sa-modal-body"></div></div>
+        </div>
+    </main>
+    <script src="../app.js"></script>
+    <script src="spices-atlas.js"></script>
+</body>
+</html>
