@@ -359,29 +359,31 @@ export const AWARD_ENCYCLOPEDIA = {
       'The awards include special categories for young scientists (under 35) and women scientists to promote diversity in scientific research.'
     ]
   },
-  'gandhi-peace-prize': {
-    id: 'gandhi-peace-prize',
-    name: 'Gandhi Peace Prize',
-    category: 'peace',
-    categoryName: 'International Peace Honour',
-    rank: "Highest International Peace Award",
-    establishedYear: '1995',
-    eligibility: 'Open to individuals, institutions, or organizations from any country who have made significant contributions toward social, economic, and political transformation through non-violence and other Gandhian methods. Self-nomination is not allowed.',
-    history: 'Instituted in 1995 on the 125th birth anniversary of Mahatma Gandhi by the Government of India. It is an international award presented annually to honor contributions to peace, social justice, and human rights through non-violent means.',
-    medalDesign: 'Includes a cash prize of ₹1 crore (approximately USD 120,000), a citation scroll, a specially designed medal featuring Mahatma Gandhi\'s image, and a traditional Indian shawl presented as a gesture of honor.',
+
+  // ==================== HEALTHCARE AWARDS ====================
+  'national-florence-nightingale-award': {
+    id: 'national-florence-nightingale-award',
+    name: 'National Florence Nightingale Award',
+    category: 'healthcare',
+    categoryName: 'Nursing Excellence Honour',
+    rank: "Highest Nursing Recognition",
+    establishedYear: '1973',
+    eligibility: 'Awarded to regular nursing staff from government and private hospitals with a minimum of 10 years of service. Candidates must possess recognized nursing qualifications (B.Sc. Nursing, GNM, or equivalent) and demonstrate exceptional dedication to patient care.',
+    history: 'Instituted in 1973 by the Ministry of Health and Family Welfare, Government of India. Named after Florence Nightingale, the legendary British nurse who founded modern nursing practices during the Crimean War.',
+    medalDesign: 'Includes a cash prize of ₹50,000, a citation certificate, and a medal. The award is presented annually on International Nurses Day (May 12th), Florence Nightingale\'s birthday.',
     notableWinners: [
-      { name: 'Julius Nyerere', year: 1995, note: 'First Awardee - First President of Tanzania' },
-      { name: 'Dr. Nelson Mandela', year: 2000, note: 'Former President of South Africa, anti-apartheid revolutionary' },
-      { name: 'Archbishop Desmond Tutu', year: 2001, note: 'South African bishop and anti-apartheid activist' },
-      { name: 'Coretta Scott King', year: 2004, note: 'American civil rights activist' },
-      { name: 'Václav Havel', year: 2003, note: 'Czech playwright, dissident, and former President' }
+      { name: 'Sister Lucy Kurien', year: 1985, note: 'Pediatric nursing and work with underprivileged children' },
+      { name: 'Sister M. D. Rosalind', year: 1990, note: 'Mental health nursing and psychiatric patient care' },
+      { name: 'Sister K. T. Rose', year: 1995, note: 'Critical care nursing and emergency department services' },
+      { name: 'Sister Mary Thomas', year: 2000, note: 'Community health nursing and rural healthcare programs' },
+      { name: 'Sister S. K. Anitha', year: 2020, note: 'Exceptional service during COVID-19 pandemic' }
     ],
     interestingFacts: [
-      'The award is administered by the Ministry of Culture, Government of India, with a distinguished jury including the Prime Minister, Leader of Opposition, and Chief Justice of India.',
-      'It has an international scope, recognizing individuals and institutions from around the world, not just India.',
-      'The award is typically announced on October 2nd (Gandhi Jayanti), the birth anniversary of Mahatma Gandhi.',
-      'At ₹1 crore, it has one of the highest cash components among Indian awards.',
-      'Both individuals and institutions are eligible, recognizing collective efforts toward peace and social transformation.'
+      'The award is named after Florence Nightingale, known as "The Lady with the Lamp" for her night rounds during the Crimean War.',
+      'Over 1,500 nurses have been recognized since the award\'s inception in 1973.',
+      'The award ceremony is typically held on May 12th, International Nurses Day, which is also Florence Nightingale\'s birthday.',
+      '35+ nurses are selected annually from across India for this prestigious honor.',
+      'The award recognizes nurses from various specializations including critical care, pediatrics, mental health, and community health.'
     ]
   }
 };
