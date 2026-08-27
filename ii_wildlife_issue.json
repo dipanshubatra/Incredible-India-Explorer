@@ -1,0 +1,4 @@
+{
+  "title": "feat(wildlife-ecotourism): implement Enterprise Indian Wildlife & Ecotourism Explorer Suite",
+  "body": "### Summary\nEnterprise interactive dashboard for India's national parks, wildlife sanctuaries, and key species.\n\n### Features\n- 🦁 **National Parks** — 10 parks with biome, state, area, and highlight metadata\n- 🦌 **Wildlife Sanctuaries** — 8 sanctuaries with habitat and key species\n- 🐅 **Key Species** — 10 species with conservation status and range\n- 📊 **Analytics** — State distribution, biome breakdown, conservation status, timeline\n- 🔍 **Global Search** — Multi-term fuzzy search with filters & sorting\n\n### Total: 697 lines\n\n### Labels\n`wildlife`, `ecotourism`, `national-parks`, `indian-heritage`, `frontend`, `ready-for-review`"
+}

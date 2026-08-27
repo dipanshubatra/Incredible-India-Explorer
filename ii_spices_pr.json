@@ -1,0 +1,6 @@
+{
+  "title": "feat(spices-culinary): implement Enterprise Indian Spices & Culinary Heritage Explorer Suite (#3637)",
+  "head": "dipanshubatra:feature/enterprise-indian-spices-culinary-heritage-suite",
+  "base": "main",
+  "body": "## Summary\nEnterprise Indian Spices & Culinary Heritage Explorer — 850 lines across 4 files.\n\n## Related Issue\nFixes #3637\n\n## Changes\n- `frontend/indian-spices-culinary-heritage/index.html` — Dashboard HTML\n- `frontend/indian-spices-culinary-heritage/style.css` — Glassmorphic CSS\n- `frontend/indian-spices-culinary-heritage/spice-engine.js` — Engine with 12 spices, 10 cuisines, 10 techniques\n- `tests/unit/spice-engine.test.mjs` — Vitest unit tests\n\n## Features\n🌶️ Spice Explorer | 🍛 Regional Cuisines | 👨‍🍳 Culinary Techniques | 📊 Analytics | 🔍 Search\n\n### Checklist\n- [x] Tests passing\n- [x] Accessibility reviewed\n- [x] Ready for review\n\nCloses #3637"
+}

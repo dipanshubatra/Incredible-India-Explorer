@@ -1,0 +1,4 @@
+{
+  "title": "feat(spices-culinary): implement Enterprise Indian Spices & Culinary Heritage Explorer Suite",
+  "body": "### Summary\nEnterprise-grade interactive dashboard for exploring India's spices, regional cuisines, and culinary techniques.\n\n### Features\n- 🌶️ **Spice Explorer** — 12 spices with flavor, origin, and usage metadata\n- 🍛 **Regional Cuisines** — 10 cuisines with veg/non-veg classification\n- 👨‍🍳 **Culinary Techniques** — 10 techniques (cooking, preservation, preparation)\n- 📊 **Analytics** — Flavor distribution, regional spread, technique breakdown, timeline\n- 🔍 **Global Search** — Multi-term fuzzy search with filters & sorting\n\n### Total Line Count: 850 lines\n\n### Labels\n`spices`, `culinary`, `indian-heritage`, `frontend`, `dashboard`, `ready-for-review`"
+}

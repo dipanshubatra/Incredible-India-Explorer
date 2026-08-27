@@ -1,0 +1,6 @@
+{
+  "title": "feat(wildlife-ecotourism): implement Enterprise Indian Wildlife & Ecotourism Explorer Suite (#3639)",
+  "head": "dipanshubatra:feature/enterprise-indian-wildlife-ecotourism-suite",
+  "base": "main",
+  "body": "## Summary\nIndian Wildlife & Ecotourism Explorer — 697 lines across 4 files.\n\n## Related Issue\nFixes #3639\n\n## Changes\n- `frontend/indian-wildlife-ecotourism/index.html` — Dashboard HTML (171 lines)\n- `frontend/indian-wildlife-ecotourism/style.css` — Glassmorphic CSS (172 lines)\n- `frontend/indian-wildlife-ecotourism/wildlife-engine.js` — Engine (253 lines)\n- `tests/unit/wildlife-engine.test.mjs` — Vitest tests (101 lines)\n\n## Features\n🦁 National Parks (10) | 🦌 Sanctuaries (8) | 🐅 Species (10) | 📊 Analytics | 🔍 Search\n\n### Checklist\n- [x] Tests passing\n- [x] Accessibility reviewed\n- [x] Ready for review\n\nCloses #3639"
+}
